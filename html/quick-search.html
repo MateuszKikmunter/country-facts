@@ -102,17 +102,14 @@
 
         const countryName = document.getElementById("search-country-input").value;
         if (countryName) {
-            loader.classList.remove("loader-hidden");
-            loader.classList.add("loader-visible");
+            utils.showLoader();
             const response = await fetch(`${apiUrl}/${countryName}`);
-            loader.classList.remove("loader-visible");
-            loader.classList.add("loader-hidden");
 
             if (response.status === 404) {
-                loader.classList.remove("loader-visible");
-                loader.classList.add("loader-hidden");
                 alert("Sorry, country nof found. Please try again!");
             }
+
+            utils.hideLoader();
         }
         else {
             alert("Please enter country name.");
