@@ -6,7 +6,3 @@
     padding: 1rem;
     text-align: center;
 }
-
-#sticky-footer {
-    flex-shrink: none;
-  }
