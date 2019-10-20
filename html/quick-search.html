@@ -9,6 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="../css/loader.css">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -21,6 +23,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+
+    <script src="../js/utils.js"></script>
 </head>
 
 <body>
@@ -49,8 +54,79 @@
             </ul>
         </div>
     </nav>
-
     <!-- navigation end -->
+
+    <!-- loader -->
+    <div class="loader loader-hidden">
+        <h3>Loading...</h3>
+    </div>
+    <!-- loader end -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" style="margin-top: 5vh;">
+                <section>
+                    <h2>Quick Search</h2>
+                    <p>Use below form to look for country data quickly</p>
+                </section>
+                <div class="input-group mb-3">
+                    <input type="text" id="search-country-input" class="form-control" placeholder="Country Name">
+                    <div class="input-group-append">
+                        <button id="search-button" class="btn btn-outline-secondary" type="button"><i
+                                class="fa fa-search"></i>
+                            Search
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer class=" fixed-bottom py-4 bg-light">
+        <div class="container text-center">
+            <small id="copyright">Copyright &copy; Mateusz Kikmunter</small>
+        </div>
+    </footer>
+    <!-- footer end -->
 </body>
 
 </html>
+<script>
+
+    utils.setFooterDate();
+
+    fetchCountryDataByName = async () => {
+        const loader = document.getElementsByClassName("loader")[0];
+        const apiUrl = "https://restcountries.eu/rest/v2/name";
+
+        const countryName = document.getElementById("search-country-input").value;
+        if (countryName) {
+            loader.classList.remove("loader-hidden");
+            loader.classList.add("loader-visible");
+            const response = await fetch(`${apiUrl}/${countryName}`);
+            loader.classList.remove("loader-visible");
+            loader.classList.add("loader-hidden");
+
+            if (response.status === 404) {
+                loader.classList.remove("loader-visible");
+                loader.classList.add("loader-hidden");
+                alert("Sorry, country nof found. Please try again!");
+            }
+        }
+        else {
+            alert("Please enter country name.");
+        }
+    }
+
+    document.getElementById("search-button").addEventListener("click", async () => {
+        await fetchCountryDataByName();
+    });
+
+    document.getElementById("search-country-input").addEventListener("keydown", async (event) => {
+        const enterKeyCode = 13;
+        if (event.keyCode === enterKeyCode) {
+            await fetchCountryDataByName();
+        }
+    });
+</script>
