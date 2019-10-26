@@ -9,10 +9,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../css/site.css">
+    <!-- <link rel="stylesheet" href="../css/site.css"> -->
+         <link rel="stylesheet" href="../css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
         
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -38,15 +39,20 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Index</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="welcome.html">Wellcome</a>
+                </li>
                 <li>
                     <a class="nav-link" href="quick-search.html">Quick Search</a>
                 </li>
+
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">Index</a>
+                    <a class="nav-link" href="about.html">About</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="about.html">About</a>
-                </li>
+
                 <li class="nav-item">
                     <a class="nav-link" href="contact.html">Contact</a>
                 </li>
@@ -54,7 +60,31 @@
         </div>
     </nav>
     <!-- navigation end -->
-
+    <div class="container-fluid">
+        <div class="container-fluid" This web page is a part of Web design course in NCI>
+    
+        </div>
+               <div>
+                Project intents do design  website with facts about countries and use following tech stack:
+                <ol>
+                    <li>Bootstrap 4 + Bootswatch (I like darkly theme and I used it before) for design and look and feel</li>
+                    <li>jQuery (Bootstrap requires it), but rest of JS code should be written in Vanilla JS and splitted into modules</li>
+                    <li>jQuery datatables for tabular data</li>
+                    <li>REST countries api as data source</li>
+                    <li>font awesome for icons</li>
+                </ol>
+                
+                Project can contain following pages:
+                <ol>
+                    <li>welcome page</li>
+                    <li>quick search</li>
+                    <li>index with table showing all the countries with details button for each one</li>
+                    <li>details page where user can read more detailed info about particular country</li>
+                    <li>about page - something about the project + tech satck used and something about us</li>
+                    <li>contact page with simple contact form</li>
+                </ol>
+                </div>
+    </div>
     <!-- footer -->
     <footer class=" fixed-bottom py-4 bg-light">
         <div class="container text-center">
