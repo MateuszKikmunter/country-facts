@@ -10,13 +10,10 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/site.css">
-    <link rel="stylesheet" href="../css/lib/bootstrap/flatly.bootstrap.min.css">
+    <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css">
 
-    <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css" >
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
@@ -24,7 +21,9 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
     <script src="../js/utils.js"></script>
+    <script src="../js/quick-search.js"></script>
 </head>
 
 <body>
@@ -57,13 +56,17 @@
 
     <!-- loader -->
     <div class="loader loader-hidden">
-        <h3>Loading...</h3>
+
+        <div class="spinner-grow text-secondary" role="status"></div>
+        <div class="spinner-grow text-warning" role="status"></div>
+        <div class="spinner-grow text-success" role="status"></div>
     </div>
     <!-- loader end -->
 
     <div class="container">
         <div class="row">
-            <div class="col-md-12" style="margin-top: 5vh;">
+            <!-- search form -->
+            <div class="col-md-12 mt-5-vh">
                 <section>
                     <h2>Quick Search</h2>
                     <p>Use below form to look for country data quickly</p>
@@ -71,18 +74,24 @@
                 <div class="input-group mb-3">
                     <input type="text" id="search-country-input" class="form-control" placeholder="Country Name">
                     <div class="input-group-append">
-                        <button id="search-button" class="btn btn-outline-secondary" type="button"><i
+                        <button id="search-button" class="btn btn-outline-success" type="button"><i
                                 class="fa fa-search"></i>
                             Search
                         </button>
                     </div>
                 </div>
             </div>
+            <!-- search form end -->
+
+            <!-- search results -->
+            <div id="results" class="col-md-12 mb-5">
+            </div>
+            <!-- search results end -->
         </div>
     </div>
 
     <!-- footer -->
-    <footer class=" fixed-bottom py-4 bg-light">
+    <footer class="fixed-bottom bg-light p-3">
         <div class="container text-center">
             <small id="copyright">Copyright &copy; Mateusz Kikmunter</small>
         </div>
@@ -91,38 +100,8 @@
 </body>
 
 </html>
+
 <script>
-
     utils.setFooterDate();
-
-    fetchCountryDataByName = async () => {
-        const loader = document.getElementsByClassName("loader")[0];
-        const apiUrl = "https://restcountries.eu/rest/v2/name";
-
-        const countryName = document.getElementById("search-country-input").value;
-        if (countryName) {
-            utils.showLoader();
-            const response = await fetch(`${apiUrl}/${countryName}`);
-
-            if (response.status === 404) {
-                alert("Sorry, country nof found. Please try again!");
-            }
-
-            utils.hideLoader();
-        }
-        else {
-            alert("Please enter country name.");
-        }
-    }
-
-    document.getElementById("search-button").addEventListener("click", async () => {
-        await fetchCountryDataByName();
-    });
-
-    document.getElementById("search-country-input").addEventListener("keydown", async (event) => {
-        const enterKeyCode = 13;
-        if (event.keyCode === enterKeyCode) {
-            await fetchCountryDataByName();
-        }
-    });
+    quickSearch.attachEvents();
 </script>
