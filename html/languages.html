@@ -1,0 +1,49 @@
+<section>
+    <h3><i class="fa fa-language" aria-hidden="true"></i> Languages</h3>
+    <p class="m-0">Languages and names</p>
+</section>
+<section class="mt-3">
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Native Name</th>
+                    <th scope="col">Translations</th>
+                    <th scope="col">Languages</th>
+                    <th scope="col">Alternative Spellings</th>
+                    <th scope="col">Internet Domain</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td scope="row">{{ country.name }}</td>
+                    <td scope="row">{{ country.nativeName }}</td>
+                    <td scope="row">
+                        <p><strong>de: </strong>{{ country.translations.de }}</p>
+                        <p><strong>es: </strong>{{ country.translations.es }}</p>
+                        <p><strong>fr: </strong>{{ country.translations.fr }}</p>
+                        <p><strong>ja: </strong>{{ country.translations.ja }}</p>
+                        <p><strong>it: </strong>{{ country.translations.it }}</p>
+                        <p><strong>br: </strong>{{ country.translations.br }}</p>
+                        <p><strong>pt: </strong>{{ country.translations.pt }}</p>
+                        <p><strong>nl: </strong>{{ country.translations.nl }}</p>
+                        <p><strong>hr: </strong>{{ country.translations.hr }}</p>
+                        <p><strong>fa: </strong>{{ country.translations.fa }}</p>
+                    </td>
+                    <td scope="row">
+                        {{ #country.languages }}
+                        <p>- {{ name }}</p>
+                        {{ /country.languages }}
+                    </td>
+                    <td scope="row">
+                        {{ #country.altSpellings }}
+                        <p>- {{ . }}</p>
+                        {{ /country.altSpellings }}
+                    </td>
+                    <td scope="row">{{ country.topLevelDomain }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

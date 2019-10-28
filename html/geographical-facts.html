@@ -1,0 +1,42 @@
+<section>
+    <h3><i class="fa fa-globe" aria-hidden="true"></i> Geographical Facts</h3>
+    <p class="m-0">Basic geographical data</p>
+</section>
+<section class="mt-3">
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Region</th>
+                    <th scope="col">Subregion</th>
+                    <th scope="col">Area</th>
+                    <th scope="col">Population</th>
+                    <th scope="col">Timezones</th>
+                    <th scope="col">Borders</th>
+                    <th scope="col">Latitude</th>
+                    <th scope="col">Longitude</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td scope="row">{{ country.region }}</td>
+                    <td scope="row">{{ country.subregion }}</td>
+                    <td scope="row">{{ country.area }}</td>
+                    <td scope="row">{{ country.population }}</td>
+                    <td scope="row">
+                        {{ #country.timezones }}
+                        <p>- {{ . }}</p>
+                        {{ /country.timezones }}
+                    </td>
+                    <td scope="row">
+                        {{ #country.borders }}
+                        <p>- {{ . }}</p>
+                        {{ /country.borders }}
+                    </td>
+                    <td scope="row">{{ country.latlng.0 }}</td>
+                    <td scope="row">{{ country.latlng.1 }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

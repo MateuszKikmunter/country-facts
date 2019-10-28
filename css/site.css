@@ -20,6 +20,8 @@
 
 /* loader end */
 
+/* general - utils */
+
 .mt-5-vh {
     margin-top: 5vh;
 }
@@ -27,3 +29,16 @@
 .width-50 {
     width: 50px;
 }
+
+.m-0 {
+    margin: 0;
+}
+
+.currency-details {
+    border: 2px solid grey ;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+/* general - utils end */

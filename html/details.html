@@ -23,7 +23,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
     <script src="../js/utils.js"></script>
-    <script src="../js/quick-search.js"></script>
+    <script src="../js/details.js"></script>
 </head>
 
 <body>
@@ -54,6 +54,29 @@
     </nav>
     <!-- navigation end -->
 
+    <!-- main content -->
+    <!-- inline style for Edge - didn't work with class... -->
+    <div class="container" style="margin-bottom: 100px;">
+        <div class="row">
+            <div class="col-md-12 mt-5-vh">
+                <div id="general-info"></div>
+                <div id="geographical-facts"></div>
+                <div id="languages"></div>
+                <div id="country-codes"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- loader -->
+    <div class="loader loader-hidden">
+        <div class="spinner-grow text-secondary" role="status"></div>
+        <div class="spinner-grow text-warning" role="status"></div>
+        <div class="spinner-grow text-success" role="status"></div>
+    </div>
+    <!-- loader end -->
+
+    <!-- main content end -->
+
     <!-- footer -->
     <footer class=" fixed-bottom py-4 bg-light">
         <div class="container text-center">
@@ -64,3 +87,13 @@
 </body>
 
 </html>
+
+<script>
+    $(document).ready(async () => {
+        const url = new URL(window.location);
+        const countryName = url.searchParams.get("name");
+        if (countryName) {
+            await details.fetchCountryDataByName(countryName);
+        }
+    });
+</script>
