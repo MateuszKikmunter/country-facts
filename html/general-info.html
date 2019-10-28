@@ -1,0 +1,40 @@
+<section>
+    <h3><i class="fa fa-info-circle" aria-hidden="true"></i> General Information</h3>
+    <p class="m-0">Some general info about <strong>{{ country.name }}</strong></p>
+</section>
+<section class="mt-3">
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Flag</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Population</th>
+                    <th scope="col">Capital</th>
+                    <th scope="col">Region</th>
+                    <th scope="col">Currencies</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td scope="row">
+                        <img class="width-50" src="{{ country.flag }}" alt="Flag of {{ flag }}">
+                    </td>
+                    <td scope="row">{{ country.name }}</td>
+                    <td scope="row">{{ country.population }}</td>
+                    <td scope="row">{{ country.capital }}</td>
+                    <td scope="row">{{ country.region }}</td>
+                    <td scope="row">
+                        {{ #country.currencies }}
+                        <div class="currency-details">
+                            <p>- Name: {{ name }}</p>
+                            <p>- Code: {{ code }}</p>
+                            <p>- Symbol: {{ symbol }}</p>
+                        </div>
+                        {{ /country.currencies }}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
