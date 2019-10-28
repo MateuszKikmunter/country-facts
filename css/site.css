@@ -24,3 +24,8 @@
 .loader-hidden {
     display: none;
 }
+body {background-color: black;}
+
+#text {
+    color: black;
+}
