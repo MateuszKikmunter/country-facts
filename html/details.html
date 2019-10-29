@@ -84,16 +84,16 @@
         </div>
     </footer>
     <!-- footer end -->
+
+    <script>
+        $(document).ready(async () => {
+            const url = new URL(window.location);
+            const countryName = url.searchParams.get("name");
+            if (countryName) {
+                await details.fetchCountryDataByName(countryName);
+            }
+        });
+    </script>
 </body>
 
 </html>
-
-<script>
-    $(document).ready(async () => {
-        const url = new URL(window.location);
-        const countryName = url.searchParams.get("name");
-        if (countryName) {
-            await details.fetchCountryDataByName(countryName);
-        }
-    });
-</script>
