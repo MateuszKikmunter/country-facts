@@ -35,3 +35,7 @@
 .mt-50 {
     margin-top: 50px !important;
 }
+
+.img-responsive {
+    max-width: 100%;
+}
