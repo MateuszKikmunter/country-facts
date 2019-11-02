@@ -36,6 +36,27 @@
     margin-top: 50px !important;
 }
 
+.mb-20 {
+    margin-bottom: 20px !important;
+}
+
 .img-responsive {
     max-width: 100%;
+}
+
+.width-100 {
+    width: 100%;
+}
+
+.send-msg-btn {
+    width: 25% !important;
+    margin: 0 auto !important;
+}
+
+.text-secondary-mclaren {
+    font-family: 'McLaren', cursive;
+}
+
+.list-disc {
+    list-style-type: disc;
 }
