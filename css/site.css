@@ -110,4 +110,15 @@
     -o-transition: opacity .5s ease-out;
 }
 
+label.error {
+    display:block;
+    width:100%;
+    color: red;
+    padding: 10px;
+    text-align: center;
+    margin-top: 10px;
+    border: 1px solid red;
+    border-radius: 5px;
+}
+
 /* specific elements styles end */

@@ -3,9 +3,11 @@ const contact = function () {
     const mailTo = "siarhei.star@gmail.com";
 
     const attachEvents = () => {
-        document.getElementById("submit-btn").addEventListener("click", (e) => {
+        document.getElementById("mail-form").addEventListener("submit", (e) => {
             e.preventDefault();
-            sendEmail();
+            if ($("#mail-form").valid()) {
+                sendEmail();
+            }
         });
     };
 
