@@ -10,3 +10,4 @@ Small project with facts about countries for my web design module at college.
 * [REST Countries](https://restcountries.eu)
 * [Font Awesome](https://fontawesome.com/)
 * [Mustache JS](https://github.com/janl/mustache.js)
+* [Google Fonts](https://fonts.google.com/)
