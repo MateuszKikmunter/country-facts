@@ -26,7 +26,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-        
+
     <script src="../js/utils.js"></script>
 </head>
 
@@ -60,36 +60,71 @@
 
     <!-- main content -->
     <div class="container">
-        <div class="row">
+        <div class="row mb-100">
             <div class="col-md-12">
                 <section class="mt-50 mb-20">
                     <h3 class="banner">About</h3>
                     <h4 class="text-secondary text-secondary-mclaren">Some info about the project</h4>
                 </section>
 
-                <section class="mb-100">
-                    <p> This project is done by Mateusz Kikmunter and Siarhei Staravoitau as a part of NCI Cybersecurity
-                        online
-                        course. User can to search country facts.</p>
-                    <p>Search result is displaying flag, population, capital and location.</p>
-                    <p>Project has:</p>
+                <section>
+                    <p> This project has been written by <a href="https://github.com/MateuszKikmunter">Mateusz Kikmunter</a> 
+                        and <a href="https://github.com/siarheistar">Siarhei Staravoitau</a> as a part of NCI Cybersecurity online course.</p>
+                    <p>On the page user can search for country facts.</p>
+                    <p>It can be done either by quick search page or via index.</p>
+                    <p>Project structure is following:</p>
 
                     <ul class="list-disc">
-                        <li>6 HTML pages,</li>
-                        <li>one HTML page includes a HTML form</li>
-                        <li>site styling is controlled by one external CSS file</li>
-                        <li>has clearly defined, consistent navigation system</li>
-                        <li>website is responsive</li>
-                        <li>using JavaScript (minimum 4 examples)</li>
-                        <li>images are taken from <a href="https://unsplash.com/">unsplash.com</a></li>
+                        <li><a href="./welcome.html">Welcome</a> - landing page</li>
+                        <li><a href="./quick-search.html">Quick Search</a> - for rapid data search with dynamically loaded results and links to details page</li>
+                        <li><a href="./index.html">Index</a> - countries data in tabular form with links to more detailed info</li>
+                        <li><a href="#">About</a> - this page &#128521;</li>
+                        <li><a href="#">Details</a> - dynamically loaded detailed country data (user can go there either from quick search or index)</li>
+                        <li><a href="./contact.html">Contact</a> - contact form to email the authors</li>
+                        <li>5 more pages which are dynamically loaded and contain Mustache JS templates (used to build quick search results and details)</li>
                     </ul>
-                    <div class="row text-center">
-                        <div class="col">
-                            <a id="img-quick-search-link" href="quick-search.html">
-                                <img class="img-responsive rounded height-80 margin-center" src="../assets/map.jpg" alt="Globe">
-                            </a>
-                        </div>
-                    </div>
+                </section>
+
+                <section>
+                    <p>Links and source code:</p>
+                    <ul>
+                        <li>
+                            Source code on <a href="https://github.com/MateuszKikmunter/country-facts">GitHub</a>
+                        </li>
+                        <li>
+                           All images are taken from <a href="https://unsplash.com/">unsplash.com</a>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <p>Technologies used to build the project:</p>
+                    <ul>
+                        <li>
+                            <a href="https://getbootstrap.com/">Bootstrap 4</a>
+                        </li>
+                        <li>
+                            <a href="https://bootswatch.com/">Bootswatch</a>
+                        </li>
+                        <li>
+                            <a href="https://jquery.com/">jQuery</a>
+                        </li>
+                        <li>
+                            <a href="https://datatables.net/">jQuery Datatables</a>
+                        </li>
+                        <li>
+                            <a href="https://restcountries.eu">REST Countries</a>
+                        </li>
+                        <li>
+                            <a href="https://fontawesome.com/">Font Awesome</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/janl/mustache.js">Mustache JS</a>
+                        </li>
+                        <li>
+                            <a href="https://fonts.google.com/">Google Fonts</a>
+                        </li>
+                    </ul>
                 </section>
             </div>
         </div>
