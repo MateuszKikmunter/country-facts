@@ -19,20 +19,24 @@
             </thead>
             <tbody>
                 <tr>
+                    <!-- MustacheJS - display country region, subregion, area and population -->
                     <td scope="row">{{ country.region }}</td>
                     <td scope="row">{{ country.subregion }}</td>
                     <td scope="row">{{ country.area }}</td>
                     <td scope="row">{{ country.population }}</td>
                     <td scope="row">
-                        {{ #country.timezones }}
+                        <!-- MustacheJS - loop through country timeszones and display them -->
+                        {{ #country.timezones }}                        
                         <p>- {{ . }}</p>
                         {{ /country.timezones }}
                     </td>
                     <td scope="row">
+                        <!-- MustacheJS - loop through country borders and display them -->
                         {{ #country.borders }}
                         <p>- {{ . }}</p>
                         {{ /country.borders }}
                     </td>
+                    <!-- MustacheJS - display country cooridnates -->
                     <td scope="row">{{ country.latlng.0 }}</td>
                     <td scope="row">{{ country.latlng.1 }}</td>
                 </tr>

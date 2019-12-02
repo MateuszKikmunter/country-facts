@@ -20,6 +20,7 @@
                     <td scope="row">{{ country.name }}</td>
                     <td scope="row">{{ country.nativeName }}</td>
                     <td scope="row">
+                        <!-- MustacheJS - show country name translations -->
                         <p><strong>de: </strong>{{ country.translations.de }}</p>
                         <p><strong>es: </strong>{{ country.translations.es }}</p>
                         <p><strong>fr: </strong>{{ country.translations.fr }}</p>
@@ -32,15 +33,18 @@
                         <p><strong>fa: </strong>{{ country.translations.fa }}</p>
                     </td>
                     <td scope="row">
+                        <!-- MustacheJS - loop through country languages and display them -->
                         {{ #country.languages }}
                         <p>- {{ name }}</p>
                         {{ /country.languages }}
                     </td>
                     <td scope="row">
+                        <!-- MustacheJS - loop through country name alternative spellings and display them -->
                         {{ #country.altSpellings }}
                         <p>- {{ . }}</p>
                         {{ /country.altSpellings }}
                     </td>
+                    <!-- MustacheJS - display country Internet domain -->
                     <td scope="row">{{ country.topLevelDomain }}</td>
                 </tr>
             </tbody>

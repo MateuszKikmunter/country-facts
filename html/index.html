@@ -8,16 +8,19 @@
     <!-- set initial zoom to 1 and viewport width to device width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- import favicon for the page -->
     <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
 
+    <!-- import libraries and site CSS files -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" href="../css/site.css">
 
+    <!-- import libraries scripts -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
@@ -32,6 +35,7 @@
     <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap4.min.js"></script>
 
+    <!-- import site scripts -->
     <script src="../js/utils.js"></script>
     <script src="../js/index.js"></script>
 </head>
@@ -93,7 +97,9 @@
     <!-- footer end -->
 
     <script>
+        //set footer date to current year
         utils.setFooterDate();
+        //initialize countries table when document is fully loaded
         $(document).ready(() => {
             index.initializeTable();
         });

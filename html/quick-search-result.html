@@ -11,16 +11,20 @@
             </tr>
         </thead>
         <tbody>
+            <!-- MustacheJS - loop through the data returned from web api and insert it into the MustacheJS template variables -->
             {{ #countries }}
             <tr>
                 <td scope="row">
-                    <img class="width-50" src="{{ flag }}" alt="Flag of {{ flag }}">
+                    <!-- MustacheJS - render small flag of a country and add alt using templating engine variables -->
+                    <img class="width-50" src="{{ flag }}" alt="Flag of {{ name }}">
                 </td>
+                <!-- MustacheJS - render rest of country data using templating engine variables -->
                 <td scope="row">{{ name }}</td>
                 <td scope="row">{{ population }}</td>
                 <td scope="row">{{ capital }}</td>
                 <td scope="row">{{ region }}</td>
                 <td scope="row">
+                    <!-- MustacheJS - generate link to country details page using using templating engine variables -->
                    <a href="./details.html?name={{ name }}"><i class="fa fa-info-circle" aria-hidden="true"></i> Learn more</a>
                 </td>
             </tr>
