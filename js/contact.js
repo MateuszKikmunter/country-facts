@@ -8,7 +8,7 @@ const contact = function () {
         document.getElementById("mail-form").addEventListener("submit", (e) => {
             //first prevent default form event (submit) so its not submitted
             e.preventDefault();
-            //validate form using jQuery
+            //validate form using jQuery validate
             if ($("#mail-form").valid()) {
                 //send email (i.e. open email client) if form is valid
                 sendEmail();
