@@ -94,22 +94,6 @@
     padding: 5px;
 }
 
-#img-quick-search-link {
-    opacity: 1;
-    transition: opacity .5s ease-out;
-    -moz-transition: opacity .5s ease-out;
-    -webkit-transition: opacity .5s ease-out;
-    -o-transition: opacity .5s ease-out;
-}
-
-#img-quick-search-link:hover {
-    opacity: .7;
-    transition: opacity .5s ease-out;
-    -moz-transition: opacity .5s ease-out;
-    -webkit-transition: opacity .5s ease-out;
-    -o-transition: opacity .5s ease-out;
-}
-
 label.error {
     display:block;
     width:100%;
