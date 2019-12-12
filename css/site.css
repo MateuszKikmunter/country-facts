@@ -1,7 +1,6 @@
 /* loader */
 
-.loader {
-    z-index: 10;
+.loader {  
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
